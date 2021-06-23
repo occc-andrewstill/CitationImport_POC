@@ -1,0 +1,874 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="OdyClerkInternalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TrafficCitation_AgencyVendorInfo">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VendorAgencyId" Type="int" Nullable="false" />
+          <Property Name="CitationType" Type="varchar" MaxLength="50" />
+          <Property Name="VendorName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="AgencyName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ConnectionType" Type="varchar" MaxLength="50" />
+          <Property Name="ServerName" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ServerUserName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ServerPassword" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ServerPort" Type="int" />
+          <Property Name="LocalPath" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="RemotePath" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SSHKey" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="BCPFormatFile" Type="varchar" MaxLength="500" />
+          <Property Name="NodeID" Type="varchar" MaxLength="50" />
+          <Property Name="AgencyCode" Type="varchar" MaxLength="50" />
+          <Property Name="SLA" Type="int" />
+        </EntityType>
+        <EntityType Name="TrafficCitation_Import">
+          <Key>
+            <PropertyRef Name="CitationNumber" />
+          </Key>
+          <Property Name="UpdateType" Type="varchar" MaxLength="50" />
+          <Property Name="CitationNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CheckDigit" Type="varchar" MaxLength="50" />
+          <Property Name="CountyNumber" Type="varchar" MaxLength="50" />
+          <Property Name="JurisdictionNumber" Type="varchar" MaxLength="50" />
+          <Property Name="CityName" Type="varchar" MaxLength="50" />
+          <Property Name="IssueAgencyType" Type="varchar" MaxLength="50" />
+          <Property Name="IssueAgencyCode" Type="varchar" MaxLength="50" />
+          <Property Name="IssueAgencyName" Type="varchar" MaxLength="50" />
+          <Property Name="DayofWeek" Type="varchar" MaxLength="100" />
+          <Property Name="OffenseDate" Type="varchar" MaxLength="50" />
+          <Property Name="OffenseTime" Type="varchar" MaxLength="50" />
+          <Property Name="OffenseTimeAMPM" Type="varchar" MaxLength="50" />
+          <Property Name="DriverFirstName" Type="varchar" MaxLength="100" />
+          <Property Name="DriverMiddleName" Type="varchar" MaxLength="100" />
+          <Property Name="DriverLastName" Type="varchar" MaxLength="100" />
+          <Property Name="DriverSuffix" Type="varchar" MaxLength="50" />
+          <Property Name="StreetAddress" Type="varchar" MaxLength="50" />
+          <Property Name="AddressDiffLicense" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="StateofDriversAddress" Type="varchar" MaxLength="50" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+          <Property Name="Telephone" Type="varchar" MaxLength="50" />
+          <Property Name="BirthDate" Type="varchar" MaxLength="50" />
+          <Property Name="Race" Type="varchar" MaxLength="50" />
+          <Property Name="Sex" Type="varchar" MaxLength="50" />
+          <Property Name="Height" Type="varchar" MaxLength="50" />
+          <Property Name="DriverLicenseNumber" Type="varchar" MaxLength="50" />
+          <Property Name="DriverLicenseState" Type="varchar" MaxLength="50" />
+          <Property Name="DriverLicenseClass" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationExpiredDL" Type="varchar" MaxLength="50" />
+          <Property Name="CommercialVehicleCode" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleYear" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleMake" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleStyle" Type="varchar" MaxLength="50" />
+          <Property Name="VehiclyColor" Type="varchar" MaxLength="50" />
+          <Property Name="HazardousMaterials" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleTagNumber" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleTrailerNumber" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleState" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleTagExpYear" Type="varchar" MaxLength="50" />
+          <Property Name="CompanionCitation" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationLocation" Type="varchar" MaxLength="50" />
+          <Property Name="DistanceFeet" Type="varchar" MaxLength="50" />
+          <Property Name="DistanceMiles" Type="varchar" MaxLength="50" />
+          <Property Name="DirectionN" Type="varchar" MaxLength="50" />
+          <Property Name="DirectionS" Type="varchar" MaxLength="50" />
+          <Property Name="DirectionE" Type="varchar" MaxLength="50" />
+          <Property Name="DirectionW" Type="varchar" MaxLength="50" />
+          <Property Name="OfNode" Type="varchar" MaxLength="50" />
+          <Property Name="ActualSpeed" Type="varchar" MaxLength="50" />
+          <Property Name="PostedSpeed" Type="varchar" MaxLength="50" />
+          <Property Name="Hwy4Lane" Type="varchar" MaxLength="50" />
+          <Property Name="HwyInterstate" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationCareless" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationDevice" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationRow" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationLane" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationPassing" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationChildRestraint" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationDUI" Type="varchar" MaxLength="50" />
+          <Property Name="BloodAlcoholLevel" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationSeatBelt" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationEquipment" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationTagLess" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationTagMore" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationInsurance" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationExpiredDriverLicense" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationExpiredDLMore" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationNoDL" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationSuspendedDL" Type="varchar" MaxLength="50" />
+          <Property Name="OtherComments" Type="varchar" MaxLength="100" />
+          <Property Name="ViolationCode" Type="varchar" MaxLength="50" />
+          <Property Name="FLDLEditOverride" Type="varchar" MaxLength="50" />
+          <Property Name="StateStatuteIndicator" Type="varchar" MaxLength="50" />
+          <Property Name="Section" Type="varchar" MaxLength="50" />
+          <Property Name="SubSection" Type="varchar" MaxLength="50" />
+          <Property Name="Crash" Type="varchar" MaxLength="50" />
+          <Property Name="PropertyDamage" Type="varchar" MaxLength="50" />
+          <Property Name="PropertyDamageAmount" Type="varchar" MaxLength="50" />
+          <Property Name="Injury" Type="varchar" MaxLength="50" />
+          <Property Name="SeriousInjury" Type="varchar" MaxLength="50" />
+          <Property Name="FatalInjury" Type="varchar" MaxLength="50" />
+          <Property Name="MethodOfArrest" Type="varchar" MaxLength="50" />
+          <Property Name="CriminalCourtReq" Type="varchar" MaxLength="50" />
+          <Property Name="InfractionCourtReq" Type="varchar" MaxLength="50" />
+          <Property Name="InfractionNoCourtReq" Type="varchar" MaxLength="50" />
+          <Property Name="CourtDate" Type="varchar" MaxLength="50" />
+          <Property Name="CourtTime" Type="varchar" MaxLength="50" />
+          <Property Name="CourtName" Type="varchar" MaxLength="50" />
+          <Property Name="CourtTimeAMPM" Type="varchar" MaxLength="50" />
+          <Property Name="CourtAddress" Type="varchar" MaxLength="100" />
+          <Property Name="CourtCity" Type="varchar" MaxLength="50" />
+          <Property Name="CourtState" Type="varchar" MaxLength="50" />
+          <Property Name="CourtZip" Type="varchar" MaxLength="50" />
+          <Property Name="ArrestDeliveredTo" Type="varchar" MaxLength="50" />
+          <Property Name="ArrestDeliveredDate" Type="varchar" MaxLength="50" />
+          <Property Name="OfficerRank" Type="varchar" MaxLength="50" />
+          <Property Name="OfficerFirstName" Type="varchar" MaxLength="50" />
+          <Property Name="OfficerMiddleName" Type="varchar" MaxLength="50" />
+          <Property Name="OfficerLastName" Type="varchar" MaxLength="50" />
+          <Property Name="OfficerBadgeNumber" Type="varchar" MaxLength="50" />
+          <Property Name="OfficerId" Type="varchar" MaxLength="50" />
+          <Property Name="TrooperUnit" Type="varchar" MaxLength="50" />
+          <Property Name="Bal08Above" Type="varchar" MaxLength="50" />
+          <Property Name="DUIRefuse" Type="varchar" MaxLength="50" />
+          <Property Name="DUILicenseSurrendered" Type="varchar" MaxLength="50" />
+          <Property Name="DUILicenseRSN" Type="varchar" MaxLength="50" />
+          <Property Name="DuiEligible" Type="varchar" MaxLength="50" />
+          <Property Name="DUIEligibleRSN" Type="varchar" MaxLength="50" />
+          <Property Name="DUIBarOffice" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="AggressiveDriverFlag" Type="varchar" MaxLength="50" />
+          <Property Name="CriminalIndicator" Type="varchar" MaxLength="50" />
+          <Property Name="FileAmount" Type="varchar" MaxLength="50" />
+          <Property Name="Filler" Type="varchar" MaxLength="50" />
+          <Property Name="IssueArrestDate" Type="varchar" MaxLength="50" />
+          <Property Name="OfficerDeliveryVerification" Type="varchar" MaxLength="50" />
+          <Property Name="DueDate" Type="varchar" MaxLength="50" />
+          <Property Name="Motorcycle" Type="varchar" MaxLength="50" />
+          <Property Name="PassengerVehicle16" Type="varchar" MaxLength="50" />
+          <Property Name="OfficerReExamFlag" Type="varchar" MaxLength="50" />
+          <Property Name="DUIViolationUnder18" Type="varchar" MaxLength="50" />
+          <Property Name="ECitationIndicator" Type="varchar" MaxLength="50" />
+          <Property Name="NameChange" Type="varchar" MaxLength="50" />
+          <Property Name="CommercialDL" Type="varchar" MaxLength="50" />
+          <Property Name="GPSLat" Type="varchar" MaxLength="50" />
+          <Property Name="GPSLong" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationSignalRedLight" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationWorkersPresent" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationHandHeld" Type="varchar" MaxLength="50" />
+          <Property Name="ViolationSchoolZone" Type="varchar" MaxLength="50" />
+          <Property Name="AgencyIdentifier" Type="varchar" MaxLength="50" />
+          <Property Name="PermanentRegistration" Type="varchar" MaxLength="50" />
+          <Property Name="SpeedMeasuringDeviceId" Type="varchar" MaxLength="50" />
+          <Property Name="ComplianceDate" Type="varchar" MaxLength="50" />
+          <Property Name="DLSeize" Type="varchar" MaxLength="50" />
+          <Property Name="Business" Type="varchar(max)" />
+          <Property Name="FileLogId" Type="varchar" MaxLength="50" />
+          <Property Name="ExceptionReason" Type="varchar(max)" />
+          <Property Name="ExceptionFlag" Type="int" />
+          <Property Name="CaseId" Type="int" />
+          <Property Name="CaseType" Type="varchar" MaxLength="50" />
+          <Property Name="RunDate" Type="date" />
+          <Property Name="CaseNumber" Type="varchar" MaxLength="50" />
+          <Property Name="Statute" Type="varchar" MaxLength="100" />
+          <Property Name="Code" Type="varchar" MaxLength="100" />
+          <Property Name="Jurisdiction" Type="varchar" MaxLength="100" />
+          <Property Name="JurisdictionNumberOdy" Type="varchar" MaxLength="20" />
+          <Property Name="DocumentID" Type="int" />
+          <Property Name="DocumentVersionId" Type="int" />
+          <Property Name="IssueAgencyNameOdy" Type="varchar" MaxLength="50" />
+          <Property Name="OfficerPartyID" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleMakeCode" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleColorCode" Type="varchar" MaxLength="50" />
+          <Property Name="Degree" Type="varchar" MaxLength="50" />
+          <Property Name="OfficerFullName" Type="varchar" MaxLength="50" />
+          <Property Name="CommercialVehicleCodeOdy" Type="varchar" MaxLength="50" />
+          <Property Name="HazardousMaterialsOdy" Type="varchar" MaxLength="50" />
+          <Property Name="AggressiveDriverFlagOdy" Type="varchar" MaxLength="50" />
+          <Property Name="InjuryOdy" Type="varchar" MaxLength="50" />
+          <Property Name="SeriousInjuryOdy" Type="varchar" MaxLength="50" />
+          <Property Name="FatalInjuryOdy" Type="varchar" MaxLength="50" />
+          <Property Name="ZipCodeOdy" Type="varchar" MaxLength="50" />
+          <Property Name="JurisdictionCode" Type="varchar" MaxLength="50" />
+          <Property Name="HeightFeet" Type="varchar" MaxLength="50" />
+          <Property Name="HeightInches" Type="varchar" MaxLength="50" />
+          <Property Name="StatuteCodeID" Type="varchar" MaxLength="50" />
+          <Property Name="CriminalCourtReqOdy" Type="varchar" MaxLength="50" />
+          <Property Name="OfficerIDOdy" Type="varchar" MaxLength="50" />
+          <Property Name="NodeID" Type="varchar" MaxLength="10" />
+          <Property Name="CourtMandatory" Type="varchar" MaxLength="10" />
+          <Property Name="TrooperUnitOdy" Type="varchar" MaxLength="10" />
+          <Property Name="EventID" Type="varchar" MaxLength="20" />
+          <Property Name="CriminalCase" Type="char" MaxLength="1" />
+          <Property Name="VendorAgencyId" Type="int" />
+          <Property Name="WorkFlowItemId" Type="int" />
+          <Property Name="RaceOdy" Type="varchar" MaxLength="5" />
+          <Property Name="LastApiAttempt" Type="datetime" />
+          <Property Name="Processed" Type="bit" />
+          <Property Name="ViolationExpiredDLOdy" Type="varchar" MaxLength="20" />
+          <Property Name="NotifySA" Type="bit" />
+          <Property Name="QueueStatus" Type="int" />
+          <Property Name="ApiStatus" Type="bit" />
+          <Property Name="Has_Image" Type="bit" />
+        </EntityType>
+        <EntityType Name="TrafficCitation_ImportFileLog">
+          <Key>
+            <PropertyRef Name="FileLogId" />
+          </Key>
+          <Property Name="FileLogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FileDate" Type="date" Nullable="false" />
+          <Property Name="FileName" Type="varchar" MaxLength="255" />
+          <Property Name="RecordCount" Type="int" />
+          <Property Name="ProcessStartTime" Type="datetime" />
+          <Property Name="ProcessEndTime" Type="datetime" />
+          <Property Name="ProcessStatus" Type="varchar" MaxLength="500" />
+          <Property Name="VendorAgencyId" Type="int" />
+        </EntityType>
+        <Function Name="TrafficCitationImport_Exceptions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FileLogId" Type="int" Mode="In" />
+          <Parameter Name="LocalPath" Type="varchar" Mode="In" />
+          <Parameter Name="DebugFlag" Type="tinyint" Mode="In" />
+        </Function>
+        <Function Name="TrafficCitationImport_Exceptions_Red" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FileLogId" Type="int" Mode="In" />
+          <Parameter Name="LocalPath" Type="varchar" Mode="In" />
+          <Parameter Name="DebugFlag" Type="tinyint" Mode="In" />
+        </Function>
+        <Function Name="TrafficCitationImport_Exceptions_Toll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FileLogId" Type="int" Mode="In" />
+          <Parameter Name="LocalPath" Type="varchar" Mode="In" />
+          <Parameter Name="DebugFlag" Type="tinyint" Mode="In" />
+        </Function>
+        <Function Name="TrafficCitationImport_FixAppearByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FileLogId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TrafficCitationImport_FormatStatute" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+          <Parameter Name="Section" Type="varchar" Mode="In" />
+          <Parameter Name="Subsection" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="TrafficCitationImport_GetDirectoryFilenamesWithCreationDates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PathName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="TrafficCitationImport_GetLicenseExpirationDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+          <Parameter Name="DLNUmber" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="TrafficCitationImport_GetStatuteGroupID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="Statute" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="TrafficCitationImport_GetUniqueOffenseCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+          <Parameter Name="Statute" Type="varchar" Mode="In" />
+          <Parameter Name="ViolationCode" Type="varchar" Mode="In" />
+          <Parameter Name="BaseFine" Type="varchar" Mode="In" />
+          <Parameter Name="BAL" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="TrafficCitationImport_ImportCitationFile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TrafficCitationImport_ImportCitationsToOdyssey" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FileLogId" Type="int" Mode="In" />
+          <Parameter Name="VendorAgencyId" Type="int" Mode="In" />
+          <Parameter Name="LocalPath" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="TrafficCitationImport_LinkImages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FileLogId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TrafficCitationImport_MarkCitationRecordAsHasImage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ImageFromDirectory" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="TrafficCitationImport_MarkFileCompletion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FileLogId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TrafficCitationImport_ProcessCitations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FileLogId" Type="int" Mode="In" />
+          <Parameter Name="CitationNumber" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="TrafficCitationImport_ProcessFailedCitations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CitationNumber" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="TrafficCitationImport_Processing" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FileLogId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TrafficCitationImport_ReprocessSkippedFiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TrafficCitationImport_SendFailedToQueue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="QueFileLogId" Type="int" Mode="In" />
+          <Parameter Name="CurrExceptionFlag" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="TrafficCitationImport_SendFailedToQueue_Retry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TrafficCitationImport_SendImagesToTraffic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="OdyClerkInternalModelStoreContainer">
+          <EntitySet Name="TrafficCitation_AgencyVendorInfo" EntityType="Self.TrafficCitation_AgencyVendorInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrafficCitation_Import" EntityType="Self.TrafficCitation_Import" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrafficCitation_ImportFileLog" EntityType="Self.TrafficCitation_ImportFileLog" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OdyClerkInternalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TrafficCitation_AgencyVendorInfo">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VendorAgencyId" Type="Int32" Nullable="false" />
+          <Property Name="CitationType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VendorName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AgencyName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ConnectionType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ServerName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ServerUserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ServerPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ServerPort" Type="Int32" />
+          <Property Name="LocalPath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RemotePath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SSHKey" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="BCPFormatFile" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="NodeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AgencyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SLA" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TrafficCitation_Import">
+          <Key>
+            <PropertyRef Name="CitationNumber" />
+          </Key>
+          <Property Name="UpdateType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CitationNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CheckDigit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CountyNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="JurisdictionNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IssueAgencyType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IssueAgencyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IssueAgencyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DayofWeek" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OffenseDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OffenseTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OffenseTimeAMPM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DriverFirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DriverMiddleName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DriverLastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DriverSuffix" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StreetAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AddressDiffLicense" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StateofDriversAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BirthDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Race" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sex" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Height" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DriverLicenseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DriverLicenseState" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DriverLicenseClass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationExpiredDL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CommercialVehicleCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleYear" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleMake" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehiclyColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HazardousMaterials" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleTagNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleTrailerNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleState" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleTagExpYear" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanionCitation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DistanceFeet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DistanceMiles" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DirectionN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DirectionS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DirectionE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DirectionW" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OfNode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ActualSpeed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PostedSpeed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Hwy4Lane" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HwyInterstate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationCareless" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationDevice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationRow" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationLane" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationPassing" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationChildRestraint" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationDUI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BloodAlcoholLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationSeatBelt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationEquipment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationTagLess" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationTagMore" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationInsurance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationExpiredDriverLicense" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationExpiredDLMore" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationNoDL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationSuspendedDL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OtherComments" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FLDLEditOverride" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StateStatuteIndicator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Section" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SubSection" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Crash" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PropertyDamage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PropertyDamageAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Injury" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SeriousInjury" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FatalInjury" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MethodOfArrest" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CriminalCourtReq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InfractionCourtReq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InfractionNoCourtReq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CourtDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CourtTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CourtName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CourtTimeAMPM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CourtAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CourtCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CourtState" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CourtZip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ArrestDeliveredTo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ArrestDeliveredDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OfficerRank" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OfficerFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OfficerMiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OfficerLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OfficerBadgeNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OfficerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TrooperUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bal08Above" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DUIRefuse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DUILicenseSurrendered" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DUILicenseRSN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DuiEligible" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DUIEligibleRSN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DUIBarOffice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AggressiveDriverFlag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CriminalIndicator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FileAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Filler" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IssueArrestDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OfficerDeliveryVerification" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Motorcycle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PassengerVehicle16" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OfficerReExamFlag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DUIViolationUnder18" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ECitationIndicator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NameChange" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CommercialDL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GPSLat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GPSLong" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationSignalRedLight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationWorkersPresent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationHandHeld" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ViolationSchoolZone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AgencyIdentifier" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PermanentRegistration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SpeedMeasuringDeviceId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ComplianceDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DLSeize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Business" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FileLogId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ExceptionReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ExceptionFlag" Type="Int32" />
+          <Property Name="CaseId" Type="Int32" />
+          <Property Name="CaseType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RunDate" Type="DateTime" Precision="0" />
+          <Property Name="CaseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Statute" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Jurisdiction" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="JurisdictionNumberOdy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentID" Type="Int32" />
+          <Property Name="DocumentVersionId" Type="Int32" />
+          <Property Name="IssueAgencyNameOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OfficerPartyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleMakeCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleColorCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Degree" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OfficerFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CommercialVehicleCodeOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HazardousMaterialsOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AggressiveDriverFlagOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InjuryOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SeriousInjuryOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FatalInjuryOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZipCodeOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="JurisdictionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HeightFeet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HeightInches" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StatuteCodeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CriminalCourtReqOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OfficerIDOdy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NodeID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CourtMandatory" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TrooperUnitOdy" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="EventID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CriminalCase" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="VendorAgencyId" Type="Int32" />
+          <Property Name="WorkFlowItemId" Type="Int32" />
+          <Property Name="RaceOdy" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="LastApiAttempt" Type="DateTime" Precision="3" />
+          <Property Name="Processed" Type="Boolean" />
+          <Property Name="ViolationExpiredDLOdy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NotifySA" Type="Boolean" />
+          <Property Name="QueueStatus" Type="Int32" />
+          <Property Name="ApiStatus" Type="Boolean" />
+          <Property Name="Has_Image" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TrafficCitation_ImportFileLog">
+          <Key>
+            <PropertyRef Name="FileLogId" />
+          </Key>
+          <Property Name="FileLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FileDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FileName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="RecordCount" Type="Int32" />
+          <Property Name="ProcessStartTime" Type="DateTime" Precision="3" />
+          <Property Name="ProcessEndTime" Type="DateTime" Precision="3" />
+          <Property Name="ProcessStatus" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="VendorAgencyId" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="OdyClerkInternalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TrafficCitation_AgencyVendorInfo" EntityType="Self.TrafficCitation_AgencyVendorInfo" />
+          <EntitySet Name="TrafficCitation_Import" EntityType="Self.TrafficCitation_Import" />
+          <EntitySet Name="TrafficCitation_ImportFileLog" EntityType="Self.TrafficCitation_ImportFileLog" />
+          <FunctionImport Name="TrafficCitationImport_Exceptions">
+            <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+            <Parameter Name="LocalPath" Mode="In" Type="String" />
+            <Parameter Name="DebugFlag" Mode="In" Type="Byte" />
+          </FunctionImport>
+          <FunctionImport Name="TrafficCitationImport_Exceptions_Red">
+            <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+            <Parameter Name="LocalPath" Mode="In" Type="String" />
+            <Parameter Name="DebugFlag" Mode="In" Type="Byte" />
+          </FunctionImport>
+          <FunctionImport Name="TrafficCitationImport_Exceptions_Toll">
+            <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+            <Parameter Name="LocalPath" Mode="In" Type="String" />
+            <Parameter Name="DebugFlag" Mode="In" Type="Byte" />
+          </FunctionImport>
+          <FunctionImport Name="TrafficCitationImport_FixAppearByDate">
+            <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="TrafficCitationImport_GetDirectoryFilenamesWithCreationDates">
+            <Parameter Name="PathName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TrafficCitationImport_ImportCitationFile" />
+          <FunctionImport Name="TrafficCitationImport_ImportCitationsToOdyssey">
+            <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+            <Parameter Name="VendorAgencyId" Mode="In" Type="Int32" />
+            <Parameter Name="LocalPath" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TrafficCitationImport_LinkImages">
+            <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="TrafficCitationImport_MarkCitationRecordAsHasImage">
+            <Parameter Name="ImageFromDirectory" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TrafficCitationImport_MarkFileCompletion">
+            <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="TrafficCitationImport_ProcessCitations">
+            <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+            <Parameter Name="CitationNumber" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TrafficCitationImport_ProcessFailedCitations">
+            <Parameter Name="CitationNumber" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TrafficCitationImport_Processing">
+            <Parameter Name="FileLogId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="TrafficCitationImport_ReprocessSkippedFiles" />
+          <FunctionImport Name="TrafficCitationImport_SendFailedToQueue">
+            <Parameter Name="QueFileLogId" Mode="In" Type="Int32" />
+            <Parameter Name="CurrExceptionFlag" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TrafficCitationImport_SendFailedToQueue_Retry" />
+          <FunctionImport Name="TrafficCitationImport_SendImagesToTraffic" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OdyClerkInternalModelStoreContainer" CdmEntityContainer="OdyClerkInternalEntities">
+          <EntitySetMapping Name="TrafficCitation_AgencyVendorInfo">
+            <EntityTypeMapping TypeName="OdyClerkInternalModel.TrafficCitation_AgencyVendorInfo">
+              <MappingFragment StoreEntitySet="TrafficCitation_AgencyVendorInfo">
+                <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+                <ScalarProperty Name="VendorAgencyId" ColumnName="VendorAgencyId" />
+                <ScalarProperty Name="CitationType" ColumnName="CitationType" />
+                <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+                <ScalarProperty Name="AgencyName" ColumnName="AgencyName" />
+                <ScalarProperty Name="ConnectionType" ColumnName="ConnectionType" />
+                <ScalarProperty Name="ServerName" ColumnName="ServerName" />
+                <ScalarProperty Name="ServerUserName" ColumnName="ServerUserName" />
+                <ScalarProperty Name="ServerPassword" ColumnName="ServerPassword" />
+                <ScalarProperty Name="ServerPort" ColumnName="ServerPort" />
+                <ScalarProperty Name="LocalPath" ColumnName="LocalPath" />
+                <ScalarProperty Name="RemotePath" ColumnName="RemotePath" />
+                <ScalarProperty Name="SSHKey" ColumnName="SSHKey" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="BCPFormatFile" ColumnName="BCPFormatFile" />
+                <ScalarProperty Name="NodeID" ColumnName="NodeID" />
+                <ScalarProperty Name="AgencyCode" ColumnName="AgencyCode" />
+                <ScalarProperty Name="SLA" ColumnName="SLA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrafficCitation_Import">
+            <EntityTypeMapping TypeName="OdyClerkInternalModel.TrafficCitation_Import">
+              <MappingFragment StoreEntitySet="TrafficCitation_Import">
+                <ScalarProperty Name="UpdateType" ColumnName="UpdateType" />
+                <ScalarProperty Name="CitationNumber" ColumnName="CitationNumber" />
+                <ScalarProperty Name="CheckDigit" ColumnName="CheckDigit" />
+                <ScalarProperty Name="CountyNumber" ColumnName="CountyNumber" />
+                <ScalarProperty Name="JurisdictionNumber" ColumnName="JurisdictionNumber" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="IssueAgencyType" ColumnName="IssueAgencyType" />
+                <ScalarProperty Name="IssueAgencyCode" ColumnName="IssueAgencyCode" />
+                <ScalarProperty Name="IssueAgencyName" ColumnName="IssueAgencyName" />
+                <ScalarProperty Name="DayofWeek" ColumnName="DayofWeek" />
+                <ScalarProperty Name="OffenseDate" ColumnName="OffenseDate" />
+                <ScalarProperty Name="OffenseTime" ColumnName="OffenseTime" />
+                <ScalarProperty Name="OffenseTimeAMPM" ColumnName="OffenseTimeAMPM" />
+                <ScalarProperty Name="DriverFirstName" ColumnName="DriverFirstName" />
+                <ScalarProperty Name="DriverMiddleName" ColumnName="DriverMiddleName" />
+                <ScalarProperty Name="DriverLastName" ColumnName="DriverLastName" />
+                <ScalarProperty Name="DriverSuffix" ColumnName="DriverSuffix" />
+                <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
+                <ScalarProperty Name="AddressDiffLicense" ColumnName="AddressDiffLicense" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="StateofDriversAddress" ColumnName="StateofDriversAddress" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Race" ColumnName="Race" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="DriverLicenseNumber" ColumnName="DriverLicenseNumber" />
+                <ScalarProperty Name="DriverLicenseState" ColumnName="DriverLicenseState" />
+                <ScalarProperty Name="DriverLicenseClass" ColumnName="DriverLicenseClass" />
+                <ScalarProperty Name="ViolationExpiredDL" ColumnName="ViolationExpiredDL" />
+                <ScalarProperty Name="CommercialVehicleCode" ColumnName="CommercialVehicleCode" />
+                <ScalarProperty Name="VehicleYear" ColumnName="VehicleYear" />
+                <ScalarProperty Name="VehicleMake" ColumnName="VehicleMake" />
+                <ScalarProperty Name="VehicleStyle" ColumnName="VehicleStyle" />
+                <ScalarProperty Name="VehiclyColor" ColumnName="VehiclyColor" />
+                <ScalarProperty Name="HazardousMaterials" ColumnName="HazardousMaterials" />
+                <ScalarProperty Name="VehicleTagNumber" ColumnName="VehicleTagNumber" />
+                <ScalarProperty Name="VehicleTrailerNumber" ColumnName="VehicleTrailerNumber" />
+                <ScalarProperty Name="VehicleState" ColumnName="VehicleState" />
+                <ScalarProperty Name="VehicleTagExpYear" ColumnName="VehicleTagExpYear" />
+                <ScalarProperty Name="CompanionCitation" ColumnName="CompanionCitation" />
+                <ScalarProperty Name="ViolationLocation" ColumnName="ViolationLocation" />
+                <ScalarProperty Name="DistanceFeet" ColumnName="DistanceFeet" />
+                <ScalarProperty Name="DistanceMiles" ColumnName="DistanceMiles" />
+                <ScalarProperty Name="DirectionN" ColumnName="DirectionN" />
+                <ScalarProperty Name="DirectionS" ColumnName="DirectionS" />
+                <ScalarProperty Name="DirectionE" ColumnName="DirectionE" />
+                <ScalarProperty Name="DirectionW" ColumnName="DirectionW" />
+                <ScalarProperty Name="OfNode" ColumnName="OfNode" />
+                <ScalarProperty Name="ActualSpeed" ColumnName="ActualSpeed" />
+                <ScalarProperty Name="PostedSpeed" ColumnName="PostedSpeed" />
+                <ScalarProperty Name="Hwy4Lane" ColumnName="Hwy4Lane" />
+                <ScalarProperty Name="HwyInterstate" ColumnName="HwyInterstate" />
+                <ScalarProperty Name="ViolationCareless" ColumnName="ViolationCareless" />
+                <ScalarProperty Name="ViolationDevice" ColumnName="ViolationDevice" />
+                <ScalarProperty Name="ViolationRow" ColumnName="ViolationRow" />
+                <ScalarProperty Name="ViolationLane" ColumnName="ViolationLane" />
+                <ScalarProperty Name="ViolationPassing" ColumnName="ViolationPassing" />
+                <ScalarProperty Name="ViolationChildRestraint" ColumnName="ViolationChildRestraint" />
+                <ScalarProperty Name="ViolationDUI" ColumnName="ViolationDUI" />
+                <ScalarProperty Name="BloodAlcoholLevel" ColumnName="BloodAlcoholLevel" />
+                <ScalarProperty Name="ViolationSeatBelt" ColumnName="ViolationSeatBelt" />
+                <ScalarProperty Name="ViolationEquipment" ColumnName="ViolationEquipment" />
+                <ScalarProperty Name="ViolationTagLess" ColumnName="ViolationTagLess" />
+                <ScalarProperty Name="ViolationTagMore" ColumnName="ViolationTagMore" />
+                <ScalarProperty Name="ViolationInsurance" ColumnName="ViolationInsurance" />
+                <ScalarProperty Name="ViolationExpiredDriverLicense" ColumnName="ViolationExpiredDriverLicense" />
+                <ScalarProperty Name="ViolationExpiredDLMore" ColumnName="ViolationExpiredDLMore" />
+                <ScalarProperty Name="ViolationNoDL" ColumnName="ViolationNoDL" />
+                <ScalarProperty Name="ViolationSuspendedDL" ColumnName="ViolationSuspendedDL" />
+                <ScalarProperty Name="OtherComments" ColumnName="OtherComments" />
+                <ScalarProperty Name="ViolationCode" ColumnName="ViolationCode" />
+                <ScalarProperty Name="FLDLEditOverride" ColumnName="FLDLEditOverride" />
+                <ScalarProperty Name="StateStatuteIndicator" ColumnName="StateStatuteIndicator" />
+                <ScalarProperty Name="Section" ColumnName="Section" />
+                <ScalarProperty Name="SubSection" ColumnName="SubSection" />
+                <ScalarProperty Name="Crash" ColumnName="Crash" />
+                <ScalarProperty Name="PropertyDamage" ColumnName="PropertyDamage" />
+                <ScalarProperty Name="PropertyDamageAmount" ColumnName="PropertyDamageAmount" />
+                <ScalarProperty Name="Injury" ColumnName="Injury" />
+                <ScalarProperty Name="SeriousInjury" ColumnName="SeriousInjury" />
+                <ScalarProperty Name="FatalInjury" ColumnName="FatalInjury" />
+                <ScalarProperty Name="MethodOfArrest" ColumnName="MethodOfArrest" />
+                <ScalarProperty Name="CriminalCourtReq" ColumnName="CriminalCourtReq" />
+                <ScalarProperty Name="InfractionCourtReq" ColumnName="InfractionCourtReq" />
+                <ScalarProperty Name="InfractionNoCourtReq" ColumnName="InfractionNoCourtReq" />
+                <ScalarProperty Name="CourtDate" ColumnName="CourtDate" />
+                <ScalarProperty Name="CourtTime" ColumnName="CourtTime" />
+                <ScalarProperty Name="CourtName" ColumnName="CourtName" />
+                <ScalarProperty Name="CourtTimeAMPM" ColumnName="CourtTimeAMPM" />
+                <ScalarProperty Name="CourtAddress" ColumnName="CourtAddress" />
+                <ScalarProperty Name="CourtCity" ColumnName="CourtCity" />
+                <ScalarProperty Name="CourtState" ColumnName="CourtState" />
+                <ScalarProperty Name="CourtZip" ColumnName="CourtZip" />
+                <ScalarProperty Name="ArrestDeliveredTo" ColumnName="ArrestDeliveredTo" />
+                <ScalarProperty Name="ArrestDeliveredDate" ColumnName="ArrestDeliveredDate" />
+                <ScalarProperty Name="OfficerRank" ColumnName="OfficerRank" />
+                <ScalarProperty Name="OfficerFirstName" ColumnName="OfficerFirstName" />
+                <ScalarProperty Name="OfficerMiddleName" ColumnName="OfficerMiddleName" />
+                <ScalarProperty Name="OfficerLastName" ColumnName="OfficerLastName" />
+                <ScalarProperty Name="OfficerBadgeNumber" ColumnName="OfficerBadgeNumber" />
+                <ScalarProperty Name="OfficerId" ColumnName="OfficerId" />
+                <ScalarProperty Name="TrooperUnit" ColumnName="TrooperUnit" />
+                <ScalarProperty Name="Bal08Above" ColumnName="Bal08Above" />
+                <ScalarProperty Name="DUIRefuse" ColumnName="DUIRefuse" />
+                <ScalarProperty Name="DUILicenseSurrendered" ColumnName="DUILicenseSurrendered" />
+                <ScalarProperty Name="DUILicenseRSN" ColumnName="DUILicenseRSN" />
+                <ScalarProperty Name="DuiEligible" ColumnName="DuiEligible" />
+                <ScalarProperty Name="DUIEligibleRSN" ColumnName="DUIEligibleRSN" />
+                <ScalarProperty Name="DUIBarOffice" ColumnName="DUIBarOffice" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AggressiveDriverFlag" ColumnName="AggressiveDriverFlag" />
+                <ScalarProperty Name="CriminalIndicator" ColumnName="CriminalIndicator" />
+                <ScalarProperty Name="FileAmount" ColumnName="FileAmount" />
+                <ScalarProperty Name="Filler" ColumnName="Filler" />
+                <ScalarProperty Name="IssueArrestDate" ColumnName="IssueArrestDate" />
+                <ScalarProperty Name="OfficerDeliveryVerification" ColumnName="OfficerDeliveryVerification" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="Motorcycle" ColumnName="Motorcycle" />
+                <ScalarProperty Name="PassengerVehicle16" ColumnName="PassengerVehicle16" />
+                <ScalarProperty Name="OfficerReExamFlag" ColumnName="OfficerReExamFlag" />
+                <ScalarProperty Name="DUIViolationUnder18" ColumnName="DUIViolationUnder18" />
+                <ScalarProperty Name="ECitationIndicator" ColumnName="ECitationIndicator" />
+                <ScalarProperty Name="NameChange" ColumnName="NameChange" />
+                <ScalarProperty Name="CommercialDL" ColumnName="CommercialDL" />
+                <ScalarProperty Name="GPSLat" ColumnName="GPSLat" />
+                <ScalarProperty Name="GPSLong" ColumnName="GPSLong" />
+                <ScalarProperty Name="ViolationSignalRedLight" ColumnName="ViolationSignalRedLight" />
+                <ScalarProperty Name="ViolationWorkersPresent" ColumnName="ViolationWorkersPresent" />
+                <ScalarProperty Name="ViolationHandHeld" ColumnName="ViolationHandHeld" />
+                <ScalarProperty Name="ViolationSchoolZone" ColumnName="ViolationSchoolZone" />
+                <ScalarProperty Name="AgencyIdentifier" ColumnName="AgencyIdentifier" />
+                <ScalarProperty Name="PermanentRegistration" ColumnName="PermanentRegistration" />
+                <ScalarProperty Name="SpeedMeasuringDeviceId" ColumnName="SpeedMeasuringDeviceId" />
+                <ScalarProperty Name="ComplianceDate" ColumnName="ComplianceDate" />
+                <ScalarProperty Name="DLSeize" ColumnName="DLSeize" />
+                <ScalarProperty Name="Business" ColumnName="Business" />
+                <ScalarProperty Name="FileLogId" ColumnName="FileLogId" />
+                <ScalarProperty Name="ExceptionReason" ColumnName="ExceptionReason" />
+                <ScalarProperty Name="ExceptionFlag" ColumnName="ExceptionFlag" />
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="CaseType" ColumnName="CaseType" />
+                <ScalarProperty Name="RunDate" ColumnName="RunDate" />
+                <ScalarProperty Name="CaseNumber" ColumnName="CaseNumber" />
+                <ScalarProperty Name="Statute" ColumnName="Statute" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Jurisdiction" ColumnName="Jurisdiction" />
+                <ScalarProperty Name="JurisdictionNumberOdy" ColumnName="JurisdictionNumberOdy" />
+                <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+                <ScalarProperty Name="DocumentVersionId" ColumnName="DocumentVersionId" />
+                <ScalarProperty Name="IssueAgencyNameOdy" ColumnName="IssueAgencyNameOdy" />
+                <ScalarProperty Name="OfficerPartyID" ColumnName="OfficerPartyID" />
+                <ScalarProperty Name="VehicleMakeCode" ColumnName="VehicleMakeCode" />
+                <ScalarProperty Name="VehicleColorCode" ColumnName="VehicleColorCode" />
+                <ScalarProperty Name="Degree" ColumnName="Degree" />
+                <ScalarProperty Name="OfficerFullName" ColumnName="OfficerFullName" />
+                <ScalarProperty Name="CommercialVehicleCodeOdy" ColumnName="CommercialVehicleCodeOdy" />
+                <ScalarProperty Name="HazardousMaterialsOdy" ColumnName="HazardousMaterialsOdy" />
+                <ScalarProperty Name="AggressiveDriverFlagOdy" ColumnName="AggressiveDriverFlagOdy" />
+                <ScalarProperty Name="InjuryOdy" ColumnName="InjuryOdy" />
+                <ScalarProperty Name="SeriousInjuryOdy" ColumnName="SeriousInjuryOdy" />
+                <ScalarProperty Name="FatalInjuryOdy" ColumnName="FatalInjuryOdy" />
+                <ScalarProperty Name="ZipCodeOdy" ColumnName="ZipCodeOdy" />
+                <ScalarProperty Name="JurisdictionCode" ColumnName="JurisdictionCode" />
+                <ScalarProperty Name="HeightFeet" ColumnName="HeightFeet" />
+                <ScalarProperty Name="HeightInches" ColumnName="HeightInches" />
+                <ScalarProperty Name="StatuteCodeID" ColumnName="StatuteCodeID" />
+                <ScalarProperty Name="CriminalCourtReqOdy" ColumnName="CriminalCourtReqOdy" />
+                <ScalarProperty Name="OfficerIDOdy" ColumnName="OfficerIDOdy" />
+                <ScalarProperty Name="NodeID" ColumnName="NodeID" />
+                <ScalarProperty Name="CourtMandatory" ColumnName="CourtMandatory" />
+                <ScalarProperty Name="TrooperUnitOdy" ColumnName="TrooperUnitOdy" />
+                <ScalarProperty Name="EventID" ColumnName="EventID" />
+                <ScalarProperty Name="CriminalCase" ColumnName="CriminalCase" />
+                <ScalarProperty Name="VendorAgencyId" ColumnName="VendorAgencyId" />
+                <ScalarProperty Name="WorkFlowItemId" ColumnName="WorkFlowItemId" />
+                <ScalarProperty Name="RaceOdy" ColumnName="RaceOdy" />
+                <ScalarProperty Name="LastApiAttempt" ColumnName="LastApiAttempt" />
+                <ScalarProperty Name="Processed" ColumnName="Processed" />
+                <ScalarProperty Name="ViolationExpiredDLOdy" ColumnName="ViolationExpiredDLOdy" />
+                <ScalarProperty Name="NotifySA" ColumnName="NotifySA" />
+                <ScalarProperty Name="QueueStatus" ColumnName="QueueStatus" />
+                <ScalarProperty Name="ApiStatus" ColumnName="ApiStatus" />
+                <ScalarProperty Name="Has_Image" ColumnName="Has_Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrafficCitation_ImportFileLog">
+            <EntityTypeMapping TypeName="OdyClerkInternalModel.TrafficCitation_ImportFileLog">
+              <MappingFragment StoreEntitySet="TrafficCitation_ImportFileLog">
+                <ScalarProperty Name="FileLogId" ColumnName="FileLogId" />
+                <ScalarProperty Name="FileDate" ColumnName="FileDate" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="RecordCount" ColumnName="RecordCount" />
+                <ScalarProperty Name="ProcessStartTime" ColumnName="ProcessStartTime" />
+                <ScalarProperty Name="ProcessEndTime" ColumnName="ProcessEndTime" />
+                <ScalarProperty Name="ProcessStatus" ColumnName="ProcessStatus" />
+                <ScalarProperty Name="VendorAgencyId" ColumnName="VendorAgencyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="TrafficCitationImport_Exceptions" FunctionName="OdyClerkInternalModel.Store.TrafficCitationImport_Exceptions" />
+          <FunctionImportMapping FunctionImportName="TrafficCitationImport_Exceptions_Red" FunctionName="OdyClerkInternalModel.Store.TrafficCitationImport_Exceptions_Red" />
+          <FunctionImportMapping FunctionImportName="TrafficCitationImport_Exceptions_Toll" FunctionName="OdyClerkInternalModel.Store.TrafficCitationImport_Exceptions_Toll" />
+          <FunctionImportMapping FunctionImportName="TrafficCitationImport_FixAppearByDate" FunctionName="OdyClerkInternalModel.Store.TrafficCitationImport_FixAppearByDate" />
+          <FunctionImportMapping FunctionImportName="TrafficCitationImport_GetDirectoryFilenamesWithCreationDates" FunctionName="OdyClerkInternalModel.Store.TrafficCitationImport_GetDirectoryFilenamesWithCreationDates" />
+          <FunctionImportMapping FunctionImportName="TrafficCitationImport_ImportCitationFile" FunctionName="OdyClerkInternalModel.Store.TrafficCitationImport_ImportCitationFile" />
+          <FunctionImportMapping FunctionImportName="TrafficCitationImport_ImportCitationsToOdyssey" FunctionName="OdyClerkInternalModel.Store.TrafficCitationImport_ImportCitationsToOdyssey" />
+          <FunctionImportMapping FunctionImportName="TrafficCitationImport_LinkImages" FunctionName="OdyClerkInternalModel.Store.TrafficCitationImport_LinkImages" />
+          <FunctionImportMapping FunctionImportName="TrafficCitationImport_MarkCitationRecordAsHasImage" FunctionName="OdyClerkInternalModel.Store.TrafficCitationImport_MarkCitationRecordAsHasImage" />
+          <FunctionImportMapping FunctionImportName="TrafficCitationImport_MarkFileCompletion" FunctionName="OdyClerkInternalModel.Store.TrafficCitationImport_MarkFileCompletion" />
+          <FunctionImportMapping FunctionImportName="TrafficCitationImport_ProcessCitations" FunctionName="OdyClerkInternalModel.Store.TrafficCitationImport_ProcessCitations" />
+          <FunctionImportMapping FunctionImportName="TrafficCitationImport_ProcessFailedCitations" FunctionName="OdyClerkInternalModel.Store.TrafficCitationImport_ProcessFailedCitations" />
+          <FunctionImportMapping FunctionImportName="TrafficCitationImport_Processing" FunctionName="OdyClerkInternalModel.Store.TrafficCitationImport_Processing" />
+          <FunctionImportMapping FunctionImportName="TrafficCitationImport_ReprocessSkippedFiles" FunctionName="OdyClerkInternalModel.Store.TrafficCitationImport_ReprocessSkippedFiles" />
+          <FunctionImportMapping FunctionImportName="TrafficCitationImport_SendFailedToQueue" FunctionName="OdyClerkInternalModel.Store.TrafficCitationImport_SendFailedToQueue" />
+          <FunctionImportMapping FunctionImportName="TrafficCitationImport_SendFailedToQueue_Retry" FunctionName="OdyClerkInternalModel.Store.TrafficCitationImport_SendFailedToQueue_Retry" />
+          <FunctionImportMapping FunctionImportName="TrafficCitationImport_SendImagesToTraffic" FunctionName="OdyClerkInternalModel.Store.TrafficCitationImport_SendImagesToTraffic" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
